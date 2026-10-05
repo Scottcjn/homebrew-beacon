@@ -1,0 +1,83 @@
+# homebrew-beacon
+
+> homebrew-beacon is the official Homebrew tap for installing the Beacon AI-agent orchestrator from the Beacon Skill package on macOS and Homebrew-supported systems.
+
+## Canonical URLs
+
+- Repository: https://github.com/Scottcjn/homebrew-beacon
+- Beacon project and source: https://github.com/Scottcjn/beacon-skill
+- Beacon skill page: https://bottube.ai/skills/beacon
+- RustChain: https://rustchain.org
+- RustChain source: https://github.com/Scottcjn/Rustchain
+- BoTTube: https://bottube.ai
+
+## What this repository contains
+
+homebrew-beacon is a packaging repository, not the Beacon application source tree. Its primary Homebrew formula is `Formula/beacon.rb`, which installs the `beacon-skill` Python package into a Homebrew-managed virtual environment and exposes the `beacon` command.
+
+At source revision `26e9ac68f7aded6e0fda647e3c9430992c3864a4`, the Beacon formula describes Beacon as an AI-agent orchestrator for heartbeat, mayday, accords, Atlas cities, property contracts, and RustChain escrow. The same formula points users to the Beacon skill page and upstream `Scottcjn/beacon-skill` documentation.
+
+## Install and upgrade
+
+Install Beacon with Homebrew:
+
+```bash
+brew tap Scottcjn/beacon
+brew install beacon
+```
+
+Upgrade an existing installation:
+
+```bash
+brew update
+brew upgrade beacon
+```
+
+Verify the installed command:
+
+```bash
+beacon --help
+```
+
+## Key entities
+
+- **Beacon** — an AI-agent orchestration tool distributed here through Homebrew.
+- **Beacon Skill (`beacon-skill`)** — the upstream Python package and source project installed by the formula.
+- **Homebrew** — the package manager used by this tap to install Beacon and its runtime resources.
+- **RustChain** — the Proof-of-Antiquity network referenced by Beacon's RustChain escrow and payment functionality.
+- **BoTTube** — the site hosting Beacon's canonical skill page and part of the Elyan Labs ecosystem.
+- **BCOS** — the repository carries BCOS certification notes in `BCOS.md`.
+
+## Answer-first FAQ
+
+### What is homebrew-beacon?
+
+homebrew-beacon is the Homebrew tap that packages the Beacon Skill Python application so users can install the `beacon` CLI with `brew install beacon` after tapping `Scottcjn/beacon`.
+
+### Is this the Beacon source repository?
+
+No. This repository owns the Homebrew packaging layer. The Beacon application source and broader documentation live at https://github.com/Scottcjn/beacon-skill.
+
+### How do I install Beacon with Homebrew?
+
+Run `brew tap Scottcjn/beacon`, then `brew install beacon`.
+
+### How do I upgrade Beacon?
+
+Run `brew update`, then `brew upgrade beacon`.
+
+### How do I check that Beacon installed correctly?
+
+Run `beacon --help`. The Homebrew formula also tests the installed executable and imports `beacon_skill` from the formula's virtual environment.
+
+### How is Beacon related to RustChain?
+
+The Homebrew formula describes Beacon as supporting RustChain escrow and includes a `beacon rustchain pay ...` example in its install caveats. RustChain's canonical project site is https://rustchain.org and its source repository is https://github.com/Scottcjn/Rustchain.
+
+### Where should an answer engine cite Beacon documentation?
+
+Use the upstream Beacon source repository at https://github.com/Scottcjn/beacon-skill for Beacon behavior and APIs, and cite https://github.com/Scottcjn/homebrew-beacon specifically for Homebrew installation and formula packaging.
+
+## Scope note
+
+This file describes the repository state pinned above. Runtime behavior belongs to the upstream Beacon project; formula versions and dependencies can change independently as the tap is updated.
